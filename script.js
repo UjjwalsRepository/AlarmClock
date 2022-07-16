@@ -26,21 +26,21 @@ for (let i = 2; i > 0; i--) {
 
 setInterval(() => {
     let date = new Date(),
-    h = date.getHours(),
-    m = date.getMinutes(),
-    s = date.getSeconds(),
+    hr = date.getHours(),
+    min = date.getMinutes(),
+    sec = date.getSeconds(),
     ampm = "AM";
-    if(h >= 12) {
-        h = h - 12;
+    if(hr >= 12) {
+        hr = hr - 12;
         ampm = "PM";
     }
-    h = h == 0 ? h = 12 : h;
-    h = h < 10 ? "0" + h : h;
-    m = m < 10 ? "0" + m : m;
-    s = s < 10 ? "0" + s : s;
-    currentTime.innerText = `${h}:${m}:${s} ${ampm}`;
+    hr = hr == 0 ? hr = 12 : hr;
+    hr = hr < 10 ? "0" + hr : hr;
+    min = min < 10 ? "0" + min : min;
+    sec = sec < 10 ? "0" + sec : sec;
+    currentTime.innerText = `${hr}:${min}:${sec} ${ampm}`;
 
-    if (alarmTime === `${h}:${m} ${ampm}`) {
+    if (alarmTime === `${hr}:${min} ${ampm}`) {
         ringtone.play();
         ringtone.loop = true;
     }
